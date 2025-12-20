@@ -181,46 +181,43 @@ function Header() {
 function GradientBackground() {
   return (
     <div
-      className="absolute h-[513px] top-[-327px] left-1/2 -translate-x-1/2 sm:left-[-207px] sm:translate-x-0 w-[1755px] pointer-events-none select-none will-change-transform"
+      className="absolute h-[513px] top-[-327px] left-[-207px] w-[1755px] pointer-events-none select-none will-change-transform"
       aria-hidden="true"
       role="presentation"
     >
       <div className="absolute inset-[-19.49%_-5.7%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1955 713">
-          <g filter="url(#filter0_f_2_7)">
+          <g filter="url(#filter0_nf_2_7)">
             <ellipse
               cx="977.5"
               cy="356.5"
-              fill="url(#paint0_radial_2_7)"
-              rx="977.5"
-              ry="356.5"
+              fill="url(#paint0_linear_2_7)"
+              rx="877.5"
+              ry="256.5"
             />
           </g>
           <defs>
-            <filter
-              id="filter0_f_2_7"
-              width="2355.5"
-              height="1113.5"
-              x="-200"
-              y="-200.5"
-              colorInterpolationFilters="sRGB"
-              filterUnits="userSpaceOnUse"
-            >
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="713" id="filter0_nf_2_7" width="1955" x="0" y="0">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_2_7" stdDeviation="100" />
+              <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+              <feTurbulence baseFrequency="0.6 0.6" numOctaves="1" result="noise" seed="4600" stitchTiles="stitch" type="fractalNoise" />
+              <feColorMatrix in="noise" result="alphaNoise" type="luminanceToAlpha" />
+              <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                <feFuncA type="discrete" />
+              </feComponentTransfer>
+              <feComposite in="coloredNoise1" in2="shape" operator="in" result="noise1Clipped" />
+              <feFlood floodColor="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+              <feComposite in="color1Flood" in2="noise1Clipped" operator="in" result="color1" />
+              <feMerge result="effect1_noise_2_7">
+                <feMergeNode in="shape" />
+                <feMergeNode in="color1" />
+              </feMerge>
+              <feGaussianBlur result="effect2_foregroundBlur_2_7" stdDeviation="50" />
             </filter>
-            <radialGradient
-              id="paint0_radial_2_7"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientTransform="matrix(0 356.5 -977.5 0 977.5 356.5)"
-              gradientUnits="userSpaceOnUse"
-            >
+            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_2_7" x1="977.5" x2="977.5" y1="100" y2="613">
               <stop stopColor="#6B5FFF" />
-              <stop offset="1" stopColor="#1D2CF3" stopOpacity="0" />
-            </radialGradient>
+              <stop offset="0.980769" stopColor="#1D2CF3" stopOpacity="0.8" />
+            </linearGradient>
           </defs>
         </svg>
       </div>
