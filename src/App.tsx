@@ -72,7 +72,7 @@ function HeroContent() {
       {/* Headline */}
       <motion.h1
         id="hero-heading"
-        className="font-['Plus_Jakarta_Sans',sans-serif] font-bold leading-[1.1] text-[clamp(56px,8vw,92px)] text-white tracking-tight relative"
+        className="font-['Plus_Jakarta_Sans',sans-serif] font-bold leading-[1.1] text-[clamp(48px,8vw,92px)] text-white tracking-tight relative"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -362,7 +362,7 @@ function RealitySection() {
               </div>
 
               {/* Main message */}
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(29px,3.6vw,43px)] leading-[1.2] tracking-tight mb-5 relative z-10">
+              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(29px,3.6vw,43px)] leading-[1.2] tracking-tight mb-5 relative z-10 max-w-[95%] sm:max-w-none">
                 <span className="text-white">Most websites look good</span>
                 <br />
                 <span className="bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] bg-clip-text text-transparent">
