@@ -146,7 +146,7 @@ function Navigation() {
       <div className="flex items-center gap-6 sm:gap-8">
         <Link
           to="/our-work"
-          className="font-['Poppins',sans-serif] font-medium text-[18px] sm:text-[15px] text-white/80 hover:text-white transition-colors duration-200"
+          className="font-['Poppins',sans-serif] font-medium text-[18px] sm:text-[18px] text-white/80 hover:text-white transition-colors duration-200"
         >
           Our Work
         </Link>
