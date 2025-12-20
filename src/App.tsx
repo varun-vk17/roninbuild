@@ -8,8 +8,8 @@ import { OurWork } from './pages/OurWork';
 
 function Logo() {
   return (
-    <a
-      href="#"
+    <Link
+      to="/"
       className="h-[28px] relative shrink-0 w-[78px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 rounded-sm transition-opacity hover:opacity-80"
       aria-label="Ronin - Home"
     >
@@ -19,7 +19,7 @@ function Logo() {
           <path d={svgPaths.pbfbd400} fill="currentColor" className="text-white" />
         </g>
       </svg>
-    </a>
+    </Link>
   );
 }
 
