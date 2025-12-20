@@ -239,7 +239,7 @@ function SkipLink() {
 function ProblemSection() {
   return (
     <section
-      className="bg-black w-full py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
       aria-labelledby="problem-heading"
     >
       {/* Background gradient */}
@@ -287,7 +287,7 @@ function ProblemSection() {
 function RealitySection() {
   return (
     <section
-      className="bg-black w-full py-32 sm:py-40 px-6 sm:px-8 lg:px-12 relative"
+      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative"
       aria-labelledby="reality-heading"
     >
       {/* Background gradient */}
@@ -444,7 +444,7 @@ function RoadmapSection() {
 
   return (
     <section
-      className="bg-black w-full py-20 sm:py-28 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
       aria-labelledby="roadmap-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
@@ -567,7 +567,7 @@ function OutcomesSection() {
 
   return (
     <section
-      className="bg-black w-full py-32 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
       aria-labelledby="outcomes-heading"
     >
       {/* Background gradients */}
@@ -688,7 +688,7 @@ function PricingSection() {
 
   return (
     <section
-      className="bg-black w-full py-32 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
       aria-labelledby="pricing-heading"
     >
       {/* Background gradients */}
