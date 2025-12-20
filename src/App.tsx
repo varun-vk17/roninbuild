@@ -187,7 +187,7 @@ function GradientBackground() {
     >
       <div className="absolute inset-[-19.49%_-5.7%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1955 713">
-          <g filter="url(#filter0_nf_2_7)">
+          <g filter="url(#filter0_f_2_7)">
             <ellipse
               cx="977.5"
               cy="356.5"
@@ -198,7 +198,7 @@ function GradientBackground() {
           </g>
           <defs>
             <filter
-              id="filter0_nf_2_7"
+              id="filter0_f_2_7"
               width="2355.5"
               height="1113.5"
               x="-200"
@@ -207,12 +207,20 @@ function GradientBackground() {
               filterUnits="userSpaceOnUse"
             >
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feGaussianBlur result="effect2_foregroundBlur_2_7" stdDeviation="50" />
+              <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur result="effect1_foregroundBlur_2_7" stdDeviation="100" />
             </filter>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_2_7" x1="977.5" x2="977.5" y1="100" y2="613">
+            <radialGradient
+              id="paint0_radial_2_7"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientTransform="matrix(0 356.5 -977.5 0 977.5 356.5)"
+              gradientUnits="userSpaceOnUse"
+            >
               <stop stopColor="#6B5FFF" />
-              <stop offset="0.980769" stopColor="#1D2CF3" stopOpacity="0.8" />
-            </linearGradient>
+              <stop offset="1" stopColor="#1D2CF3" stopOpacity="0" />
+            </radialGradient>
           </defs>
         </svg>
       </div>
