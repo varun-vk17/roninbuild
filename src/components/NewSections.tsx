@@ -299,7 +299,7 @@ export function BookingSection() {
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
             <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-[#6B5FFF]/30 via-[#6B5FFF]/10 to-transparent blur-xl" aria-hidden="true" />
 
-            <div className="grid lg:grid-cols-[380px,1fr] gap-8 lg:gap-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[380px,1fr] gap-8 lg:gap-12 relative z-10">
 
               {/* Left side - What happens next */}
               <div className="space-y-6">
@@ -387,7 +387,7 @@ export function BookingSection() {
                       Select a Date & Time
                     </h3>
 
-                    <div className="flex gap-6">
+                    <div className="flex flex-col md:flex-row gap-6">
                       {/* Calendar */}
                       <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
                         {/* Calendar Header */}
