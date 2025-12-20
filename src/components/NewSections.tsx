@@ -457,11 +457,11 @@ export function BookingSection() {
                       </div>
 
                       {/* Available Times */}
-                      <div className="w-[240px] bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
+                      <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
                         <h4 className="font-['Poppins',sans-serif] font-semibold text-[11px] text-white/50 mb-4 uppercase tracking-wider">
                           Available Times
                         </h4>
-                        <div className="space-y-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                           {availableTimes.map((time) => (
                             <button
                               key={time}
