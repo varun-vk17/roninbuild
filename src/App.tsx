@@ -3,6 +3,8 @@ import { TechStackSection, FAQSection, BookingSection, FinalCTASection, Footer }
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { FloatingParticles, AnimatedGradientOrbs, GridPattern, Spotlight, GlowingLine, AnimatedBorderCard, PulseDot, ScrollReveal, ShimmerText, MagneticButton } from './components/EnhancedVisuals';
+import { Routes, Route, Link } from 'react-router-dom';
+import { OurWork } from './pages/OurWork';
 
 function Logo() {
   return (
@@ -141,21 +143,29 @@ function Navigation() {
       aria-label="Main navigation"
     >
       <Logo />
-      <button
-        onClick={() => {
-          const bookingSection = document.getElementById('booking');
-          if (bookingSection) {
-            bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }}
-        className="bg-white hover:bg-white/95 text-black rounded-[50px] px-5 sm:px-6 py-2 sm:py-2.5 font-['Poppins',sans-serif] font-semibold text-[13px] sm:text-[14px] transition-all hover:scale-105 flex items-center gap-2 group shadow-lg cursor-pointer"
-      >
-        <span className="hidden sm:inline">Book Free Strategy Call</span>
-        <span className="sm:hidden">Book Call</span>
-        <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+      <div className="flex items-center gap-6 sm:gap-8">
+        <Link
+          to="/our-work"
+          className="font-['Poppins',sans-serif] font-medium text-[14px] sm:text-[15px] text-white/80 hover:text-white transition-colors duration-200"
+        >
+          Our Work
+        </Link>
+        <button
+          onClick={() => {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+              bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
+          className="bg-white hover:bg-white/95 text-black rounded-[50px] px-5 sm:px-6 py-2 sm:py-2.5 font-['Poppins',sans-serif] font-semibold text-[13px] sm:text-[14px] transition-all hover:scale-105 flex items-center gap-2 group shadow-lg cursor-pointer"
+        >
+          <span className="hidden sm:inline">Book Free Strategy Call</span>
+          <span className="sm:hidden">Book Call</span>
+          <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </nav>
   );
 }
@@ -814,9 +824,29 @@ function PricingSection() {
   );
 }
 
+
+
+function HomePage() {
+  return (
+    <>
+      <ProblemSection />
+      <RealitySection />
+      <RoadmapSection />
+      <OutcomesSection />
+      <PricingSection />
+      <TechStackSection />
+      <FAQSection />
+      <BookingSection />
+      <FinalCTASection />
+      <Footer />
+    </>
+  );
+}
+
 export default function App() {
   return (
     <>
+      {/* Global styles and fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
@@ -855,25 +885,23 @@ export default function App() {
         <AnimatedGradientOrbs />
         <GridPattern />
         <Navigation />
-        <main
-          id="main-content"
-          className="content-stretch flex flex-col items-center justify-center flex-1 relative w-full z-10 px-4 sm:px-6"
-          role="main"
-        >
-          <Header />
-        </main>
-      </div>
 
-      <ProblemSection />
-      <RealitySection />
-      <RoadmapSection />
-      <OutcomesSection />
-      <PricingSection />
-      <TechStackSection />
-      <FAQSection />
-      <BookingSection />
-      <FinalCTASection />
-      <Footer />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <main
+                id="main-content"
+                className="content-stretch flex flex-col items-center justify-center flex-1 relative w-full z-10 px-4 sm:px-6"
+                role="main"
+              >
+                <Header />
+              </main>
+              <HomePage />
+            </>
+          } />
+          <Route path="/our-work" element={<OurWork />} />
+        </Routes>
+      </div>
     </>
   );
 }
