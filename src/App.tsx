@@ -296,23 +296,27 @@ function RealitySection() {
       </div>
 
       <div className="max-w-[1400px] mx-auto relative">
+        <div className="text-center mb-8 sm:mb-16">
+          <div className="relative inline-block">
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+
+              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                REVENUE-FIRST ENGINEERING
+              </p>
+            </div>
+            {/* Glow effect */}
+            <div className="absolute inset-0 rounded-[18px] bg-[#6B5FFF]/15 blur-lg opacity-50" aria-hidden="true" />
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left side - Main content */}
           <div className="space-y-6 text-center sm:text-left">
-            <div className="relative inline-block mb-6">
-              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
-                {/* Bottom glow effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-                <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-                <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-                  REVENUE-FIRST ENGINEERING
-                </p>
-              </div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-[18px] bg-[#6B5FFF]/15 blur-lg opacity-50" aria-hidden="true" />
-            </div>
 
             <h2
               id="reality-heading"
