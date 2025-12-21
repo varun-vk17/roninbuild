@@ -14,7 +14,7 @@ export function TechStackSection() {
 
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/5"
+      className="bg-white/[0.02] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
       aria-labelledby="tech-stack-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
@@ -82,7 +82,7 @@ export function FAQSection() {
 
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative"
+      className="bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="faq-heading"
     >
       {/* Background gradient */}
@@ -102,7 +102,7 @@ export function FAQSection() {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-6 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -258,7 +258,7 @@ export function BookingSection() {
   return (
     <section
       id="booking"
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-white/[0.015] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="booking-heading"
     >
       {/* Background gradient */}
@@ -613,7 +613,7 @@ export function BookingSection() {
 
 export function FinalCTASection() {
   return (
-    <section className="bg-black w-full pt-20 sm:pt-28 px-4 sm:px-6 relative overflow-hidden">
+    <section className="bg-black w-full pt-24 sm:pt-28 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
       {/* Gradient CTA Card */}
       <div className="max-w-[1100px] mx-auto relative">
         <div className="relative rounded-[48px] overflow-hidden">

@@ -239,7 +239,7 @@ function SkipLink() {
 function ProblemSection() {
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-white/[0.015] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="problem-heading"
     >
       {/* Background gradient */}
@@ -287,7 +287,7 @@ function ProblemSection() {
 function RealitySection() {
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative"
+      className="bg-black w-full py-24 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="reality-heading"
     >
       {/* Background gradient */}
@@ -444,7 +444,7 @@ function RoadmapSection() {
 
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-white/[0.02] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="roadmap-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
@@ -477,7 +477,7 @@ function RoadmapSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -567,7 +567,7 @@ function OutcomesSection() {
 
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="outcomes-heading"
     >
       {/* Background gradients */}
@@ -602,7 +602,7 @@ function OutcomesSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
           {outcomes.map((outcome, index) => (
             <div
               key={index}
@@ -688,7 +688,7 @@ function PricingSection() {
 
   return (
     <section
-      className="bg-black w-full py-18 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-white/[0.015] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="pricing-heading"
     >
       {/* Background gradients */}
@@ -726,7 +726,7 @@ function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-6 mb-16">
           {packages.map((pkg, index) => (
             <div
               key={index}
