@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { FadeInUp } from './animations/FadeInUp';
 
 export function TechStackSection() {
   const technologies = [
@@ -18,31 +19,35 @@ export function TechStackSection() {
       aria-labelledby="tech-stack-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
-        <div className="text-center mb-10">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-20 mb-6 sm:mt-8">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+        <FadeInUp>
+          <div className="text-center mb-10">
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-20 mb-6 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-            <p
-              id="tech-stack-heading"
-              className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10"
-            >
-              Built on Reliable Infrastructure
+              <p
+                id="tech-stack-heading"
+                className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10"
+              >
+                Built on Reliable Infrastructure
+              </p>
+            </div>
+
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.6] max-w-[600px] mx-auto mb-8">
+              We use the same tools that power the world's leading startups.
             </p>
           </div>
-
-          <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.6] max-w-[600px] mx-auto mb-8">
-            We use the same tools that power the world's leading startups.
-          </p>
-        </div>
+        </FadeInUp>
 
         {/* Logo Grid */}
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30">
           {technologies.map((tech, index) => (
-            <div key={index} className="text-white/80 font-['Poppins',sans-serif] font-semibold text-[clamp(16px,1.8vw,20px)] tracking-wide">
-              {tech}
-            </div>
+            <FadeInUp key={index} delay={index * 50 + 100}>
+              <div className="text-white/80 font-['Poppins',sans-serif] font-semibold text-[clamp(16px,1.8vw,20px)] tracking-wide">
+                {tech}
+              </div>
+            </FadeInUp>
           ))}
         </div>
       </div>
@@ -92,50 +97,53 @@ export function FAQSection() {
 
       <div className="max-w-[900px] mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2
-            id="faq-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,56px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            Strategic Questions
-          </h2>
-        </div>
+        <FadeInUp>
+          <div className="text-center mb-16">
+            <h2
+              id="faq-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,56px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              Strategic Questions
+            </h2>
+          </div>
+        </FadeInUp>
 
         {/* FAQ Items */}
         <div className="space-y-6 sm:space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[24px] border border-white/10 overflow-hidden transition-all duration-300 hover:border-white/20"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-colors"
-                aria-expanded={openIndex === index}
-              >
-                <h3 className={`font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(16px,1.8vw,18px)] leading-[1.4] tracking-tight pr-6 transition-colors ${openIndex === index ? 'text-[#6B5FFF]' : 'text-white'
-                  }`}>
-                  {faq.question}
-                </h3>
-                <div className={`shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
-                  }`}>
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </div>
-              </button>
-
+            <FadeInUp key={index} delay={index * 100}>
               <div
-                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
+                className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[24px] border border-white/10 overflow-hidden transition-all duration-300 hover:border-white/20"
               >
-                <div className="px-6 sm:px-8 pb-6 sm:pb-8">
-                  <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.7]">
-                    {faq.answer}
-                  </p>
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-colors"
+                  aria-expanded={openIndex === index}
+                >
+                  <h3 className={`font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(16px,1.8vw,18px)] leading-[1.4] tracking-tight pr-6 transition-colors ${openIndex === index ? 'text-[#6B5FFF]' : 'text-white'
+                    }`}>
+                    {faq.question}
+                  </h3>
+                  <div className={`shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
+                    }`}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                  <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.7]">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeInUp>
           ))}
         </div>
       </div>
@@ -268,343 +276,347 @@ export function BookingSection() {
 
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+        <FadeInUp>
+          <div className="text-center mb-16">
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-            <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-              START NOW
+              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                START NOW
+              </p>
+            </div>
+
+
+            <h2
+              id="booking-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              Book Your Strategy Call.
+            </h2>
+
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
+              No sales pressure. Just a clear conversation about your revenue goals.
             </p>
           </div>
-
-
-          <h2
-            id="booking-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            Book Your Strategy Call.
-          </h2>
-
-          <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
-            No sales pressure. Just a clear conversation about your revenue goals.
-          </p>
-        </div>
+        </FadeInUp>
 
         {/* Booking Card */}
-        <div className="max-w-[1100px] mx-auto">
-          <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 sm:p-12 border border-white/15 shadow-2xl relative overflow-hidden">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-[#6B5FFF]/30 via-[#6B5FFF]/10 to-transparent blur-xl" aria-hidden="true" />
+        <FadeInUp delay={200}>
+          <div className="max-w-[1100px] mx-auto">
+            <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 sm:p-12 border border-white/15 shadow-2xl relative overflow-hidden">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-[#6B5FFF]/30 via-[#6B5FFF]/10 to-transparent blur-xl" aria-hidden="true" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-[380px,1fr] gap-8 lg:gap-12 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-[380px,1fr] gap-8 lg:gap-12 relative z-10">
 
-              {/* Left side - What happens next */}
-              <div className="space-y-6">
-                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(20px,2.5vw,24px)] text-white leading-[1.2] tracking-tight mb-8">
-                  What happens next?
-                </h3>
-
+                {/* Left side - What happens next */}
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="shrink-0 w-10 h-10 rounded-[12px] bg-gradient-to-br from-[#6B5FFF]/30 to-[#1D2CF3]/20 border border-[#6B5FFF]/40 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(20px,2.5vw,24px)] text-white leading-[1.2] tracking-tight mb-8">
+                    What happens next?
+                  </h3>
+
+                  <div className="space-y-6">
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-[12px] bg-gradient-to-br from-[#6B5FFF]/30 to-[#1D2CF3]/20 border border-[#6B5FFF]/40 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white mb-2 tracking-tight">
+                          Strategy Deep Dive
+                        </h4>
+                        <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/60 leading-[1.6]">
+                          We analyze your business goals and current gaps.
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white mb-2 tracking-tight">
-                        Strategy Deep Dive
-                      </h4>
-                      <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/60 leading-[1.6]">
-                        We analyze your business goals and current gaps.
-                      </p>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-[12px] bg-gradient-to-br from-[#6B5FFF]/30 to-[#1D2CF3]/20 border border-[#6B5FFF]/40 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white mb-2 tracking-tight">
+                          Find Hidden Revenue
+                        </h4>
+                        <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/60 leading-[1.6]">
+                          Identify leaks or planning blindspots.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-[12px] bg-gradient-to-br from-[#6B5FFF]/30 to-[#1D2CF3]/20 border border-[#6B5FFF]/40 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white mb-2 tracking-tight">
+                          10-Day Roadmap
+                        </h4>
+                        <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/60 leading-[1.6]">
+                          Walk through the exact build timeline.
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="shrink-0 w-10 h-10 rounded-[12px] bg-gradient-to-br from-[#6B5FFF]/30 to-[#1D2CF3]/20 border border-[#6B5FFF]/40 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white mb-2 tracking-tight">
-                        Find Hidden Revenue
-                      </h4>
-                      <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/60 leading-[1.6]">
-                        Identify leaks or planning blindspots.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="shrink-0 w-10 h-10 rounded-[12px] bg-gradient-to-br from-[#6B5FFF]/30 to-[#1D2CF3]/20 border border-[#6B5FFF]/40 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white mb-2 tracking-tight">
-                        10-Day Roadmap
-                      </h4>
-                      <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/60 leading-[1.6]">
-                        Walk through the exact build timeline.
-                      </p>
+                  <div className="pt-8 mt-8 border-t border-white/10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg shadow-[#6B5FFF]/30 border-2 border-white/10">
+                        <img
+                          src="/founder-face.jpg"
+                          alt="Founder"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[14px] text-white">
+                          Founder-Led Call
+                        </p>
+                        <p className="font-['Poppins',sans-serif] font-medium text-[12px] text-white/60">
+                          You speak directly with the engineer.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-8 mt-8 border-t border-white/10">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg shadow-[#6B5FFF]/30 border-2 border-white/10">
-                      <img
-                        src="/founder-face.jpg"
-                        alt="Founder"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[14px] text-white">
-                        Founder-Led Call
-                      </p>
-                      <p className="font-['Poppins',sans-serif] font-medium text-[12px] text-white/60">
-                        You speak directly with the engineer.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                {/* Right side - Calendar */}
+                <div className="space-y-6">
 
-              {/* Right side - Calendar */}
-              <div className="space-y-6">
+                  {bookingStep === 'date' && (
+                    <>
+                      <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(18px,2vw,20px)] text-white leading-[1.2] tracking-tight">
+                        Select a Date & Time
+                      </h3>
 
-                {bookingStep === 'date' && (
-                  <>
-                    <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(18px,2vw,20px)] text-white leading-[1.2] tracking-tight">
-                      Select a Date & Time
-                    </h3>
+                      <div className="flex flex-col md:flex-row gap-6">
+                        {/* Calendar */}
+                        <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
+                          {/* Calendar Header */}
+                          <div className="flex items-center justify-between mb-6">
+                            <button
+                              onClick={prevMonth}
+                              className="w-8 h-8 rounded-[8px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+                              aria-label="Previous month"
+                            >
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                              </svg>
+                            </button>
+                            <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white">
+                              {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
+                            </h4>
+                            <button
+                              onClick={nextMonth}
+                              className="w-8 h-8 rounded-[8px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+                              aria-label="Next month"
+                            >
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </button>
+                          </div>
 
-                    <div className="flex flex-col md:flex-row gap-6">
-                      {/* Calendar */}
-                      <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
-                        {/* Calendar Header */}
-                        <div className="flex items-center justify-between mb-6">
-                          <button
-                            onClick={prevMonth}
-                            className="w-8 h-8 rounded-[8px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
-                            aria-label="Previous month"
-                          >
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                          </button>
-                          <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[16px] text-white">
-                            {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
+                          {/* Day Headers */}
+                          <div className="grid grid-cols-7 gap-2 mb-3">
+                            {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map(day => (
+                              <div key={day} className="text-center font-['Poppins',sans-serif] font-semibold text-[10px] text-white/40 py-2">
+                                {day}
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Calendar Grid */}
+                          <div className="grid grid-cols-7 gap-2">
+                            {Array.from({ length: startingDayOfWeek }).map((_, index) => (
+                              <div key={`empty-${index}`} />
+                            ))}
+
+                            {Array.from({ length: daysInMonth }).map((_, index) => {
+                              const day = index + 1;
+                              const isAvailable = isDateAvailable(day);
+                              const isSelected = selectedDate?.getDate() === day &&
+                                selectedDate?.getMonth() === currentMonth.getMonth() &&
+                                selectedDate?.getFullYear() === currentMonth.getFullYear();
+
+                              return (
+                                <button
+                                  key={day}
+                                  onClick={() => handleDateClick(day)}
+                                  disabled={!isAvailable}
+                                  className={`aspect-square rounded-[8px] font-['Poppins',sans-serif] font-medium text-[14px] transition-all ${isSelected
+                                    ? 'bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] text-white shadow-lg shadow-[#6B5FFF]/30'
+                                    : isAvailable
+                                      ? 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                                      : 'bg-transparent text-white/20 cursor-not-allowed'
+                                    }`}
+                                >
+                                  {day}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Available Times */}
+                        <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
+                          <h4 className="font-['Poppins',sans-serif] font-semibold text-[11px] text-white/50 mb-4 uppercase tracking-wider">
+                            Available Times
                           </h4>
-                          <button
-                            onClick={nextMonth}
-                            className="w-8 h-8 rounded-[8px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
-                            aria-label="Next month"
-                          >
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </button>
-                        </div>
-
-                        {/* Day Headers */}
-                        <div className="grid grid-cols-7 gap-2 mb-3">
-                          {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map(day => (
-                            <div key={day} className="text-center font-['Poppins',sans-serif] font-semibold text-[10px] text-white/40 py-2">
-                              {day}
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Calendar Grid */}
-                        <div className="grid grid-cols-7 gap-2">
-                          {Array.from({ length: startingDayOfWeek }).map((_, index) => (
-                            <div key={`empty-${index}`} />
-                          ))}
-
-                          {Array.from({ length: daysInMonth }).map((_, index) => {
-                            const day = index + 1;
-                            const isAvailable = isDateAvailable(day);
-                            const isSelected = selectedDate?.getDate() === day &&
-                              selectedDate?.getMonth() === currentMonth.getMonth() &&
-                              selectedDate?.getFullYear() === currentMonth.getFullYear();
-
-                            return (
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {availableTimes.map((time) => (
                               <button
-                                key={day}
-                                onClick={() => handleDateClick(day)}
-                                disabled={!isAvailable}
-                                className={`aspect-square rounded-[8px] font-['Poppins',sans-serif] font-medium text-[14px] transition-all ${isSelected
-                                  ? 'bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] text-white shadow-lg shadow-[#6B5FFF]/30'
-                                  : isAvailable
-                                    ? 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
-                                    : 'bg-transparent text-white/20 cursor-not-allowed'
+                                key={time}
+                                onClick={() => setSelectedTime(time)}
+                                disabled={!selectedDate}
+                                className={`w-full py-3 px-4 rounded-[12px] font-['Poppins',sans-serif] font-medium text-[14px] transition-all ${selectedTime === time
+                                  ? 'bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] text-white shadow-lg shadow-[#6B5FFF]/30 border-2 border-[#6B5FFF]'
+                                  : selectedDate
+                                    ? 'bg-white/5 text-white/80 border-2 border-white/10 hover:bg-white/10 hover:border-white/20'
+                                    : 'bg-white/5 text-white/30 border-2 border-white/10 cursor-not-allowed'
                                   }`}
                               >
-                                {day}
+                                {time}
                               </button>
-                            );
-                          })}
+                            ))}
+                          </div>
                         </div>
                       </div>
 
-                      {/* Available Times */}
-                      <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-[24px] p-6 border border-white/10">
-                        <h4 className="font-['Poppins',sans-serif] font-semibold text-[11px] text-white/50 mb-4 uppercase tracking-wider">
-                          Available Times
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                          {availableTimes.map((time) => (
-                            <button
-                              key={time}
-                              onClick={() => setSelectedTime(time)}
-                              disabled={!selectedDate}
-                              className={`w-full py-3 px-4 rounded-[12px] font-['Poppins',sans-serif] font-medium text-[14px] transition-all ${selectedTime === time
-                                ? 'bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] text-white shadow-lg shadow-[#6B5FFF]/30 border-2 border-[#6B5FFF]'
-                                : selectedDate
-                                  ? 'bg-white/5 text-white/80 border-2 border-white/10 hover:bg-white/10 hover:border-white/20'
-                                  : 'bg-white/5 text-white/30 border-2 border-white/10 cursor-not-allowed'
-                                }`}
-                            >
-                              {time}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Continue Button */}
-                    <button
-                      onClick={handleContinue}
-                      disabled={!selectedDate || !selectedTime}
-                      className={`w-full py-4 rounded-[20px] font-['Poppins',sans-serif] font-semibold text-[16px] transition-all ${selectedDate && selectedTime
-                        ? 'bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] text-white shadow-lg shadow-[#6B5FFF]/40 hover:shadow-[#6B5FFF]/60 hover:scale-[1.02]'
-                        : 'bg-white/5 text-white/40 cursor-not-allowed border border-white/10'
-                        }`}
-                    >
-                      Continue
-                    </button>
-                  </>
-                )}
-
-                {bookingStep === 'details' && (
-                  <form onSubmit={handleBookingSubmit} className="animate-in fade-in slide-in-from-right-4 duration-300">
-                    <div className="flex items-center justify-between mb-8">
-                      <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[20px] text-white tracking-tight">
-                        Your Details
-                      </h3>
+                      {/* Continue Button */}
                       <button
-                        type="button"
-                        onClick={() => setBookingStep('date')}
-                        className="text-white/50 hover:text-white text-[14px] flex items-center gap-2 transition-colors cursor-pointer"
+                        onClick={handleContinue}
+                        disabled={!selectedDate || !selectedTime}
+                        className={`w-full py-4 rounded-[20px] font-['Poppins',sans-serif] font-semibold text-[16px] transition-all ${selectedDate && selectedTime
+                          ? 'bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] text-white shadow-lg shadow-[#6B5FFF]/40 hover:shadow-[#6B5FFF]/60 hover:scale-[1.02]'
+                          : 'bg-white/5 text-white/40 cursor-not-allowed border border-white/10'
+                          }`}
                       >
-                        ← Back
+                        Continue
+                      </button>
+                    </>
+                  )}
+
+                  {bookingStep === 'details' && (
+                    <form onSubmit={handleBookingSubmit} className="animate-in fade-in slide-in-from-right-4 duration-300">
+                      <div className="flex items-center justify-between mb-8">
+                        <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[20px] text-white tracking-tight">
+                          Your Details
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() => setBookingStep('date')}
+                          className="text-white/50 hover:text-white text-[14px] flex items-center gap-2 transition-colors cursor-pointer"
+                        >
+                          ← Back
+                        </button>
+                      </div>
+
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Full Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            required
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
+                            placeholder="John Doe"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Work Email</label>
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
+                            placeholder="john@company.com"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Company Name</label>
+                          <input
+                            type="text"
+                            name="company"
+                            required
+                            value={formData.company}
+                            onChange={handleInputChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
+                            placeholder="Acme Inc."
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Website (Optional)</label>
+                          <input
+                            type="url"
+                            name="website"
+                            value={formData.website}
+                            onChange={handleInputChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
+                            placeholder="https://acme.com"
+                          />
+                        </div>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full mt-8 py-4 rounded-[20px] bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] text-white font-semibold text-[16px] disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 cursor-pointer"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Confirming...
+                          </>
+                        ) : "Confirm Booking"}
+                      </button>
+                    </form>
+                  )}
+
+                  {bookingStep === 'success' && (
+                    <div className="text-center py-12 animate-in fade-in zoom-in duration-300 bg-white/5 backdrop-blur-sm rounded-[24px] border border-white/10 p-6">
+                      <div className="w-20 h-20 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-6">
+                        <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[24px] text-white mb-2">Booking Confirmed!</h3>
+                      <p className="text-white/60 mb-8">We've sent a confirmation email to {formData.email}.</p>
+                      <button
+                        onClick={() => {
+                          setBookingStep('date');
+                          setSelectedDate(null);
+                          setSelectedTime(null);
+                          setFormData({ name: '', email: '', company: '', website: '' });
+                        }}
+                        className="text-[#6B5FFF] font-medium hover:text-white transition-colors cursor-pointer"
+                      >
+                        Book another call
                       </button>
                     </div>
+                  )}
+                </div>
 
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Full Name</label>
-                        <input
-                          type="text"
-                          name="name"
-                          required
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
-                          placeholder="John Doe"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Work Email</label>
-                        <input
-                          type="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
-                          placeholder="john@company.com"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Company Name</label>
-                        <input
-                          type="text"
-                          name="company"
-                          required
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
-                          placeholder="Acme Inc."
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-white/60 text-[12px] font-medium mb-2 uppercase tracking-wide">Website (Optional)</label>
-                        <input
-                          type="url"
-                          name="website"
-                          value={formData.website}
-                          onChange={handleInputChange}
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-[#6B5FFF] transition-colors"
-                          placeholder="https://acme.com"
-                        />
-                      </div>
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full mt-8 py-4 rounded-[20px] bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] text-white font-semibold text-[16px] disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 cursor-pointer"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Confirming...
-                        </>
-                      ) : "Confirm Booking"}
-                    </button>
-                  </form>
-                )}
-
-                {bookingStep === 'success' && (
-                  <div className="text-center py-12 animate-in fade-in zoom-in duration-300 bg-white/5 backdrop-blur-sm rounded-[24px] border border-white/10 p-6">
-                    <div className="w-20 h-20 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[24px] text-white mb-2">Booking Confirmed!</h3>
-                    <p className="text-white/60 mb-8">We've sent a confirmation email to {formData.email}.</p>
-                    <button
-                      onClick={() => {
-                        setBookingStep('date');
-                        setSelectedDate(null);
-                        setSelectedTime(null);
-                        setFormData({ name: '', email: '', company: '', website: '' });
-                      }}
-                      className="text-[#6B5FFF] font-medium hover:text-white transition-colors cursor-pointer"
-                    >
-                      Book another call
-                    </button>
-                  </div>
-                )}
               </div>
-
             </div>
           </div>
-        </div>
+        </FadeInUp>
       </div>
     </section>
   );
@@ -616,40 +628,42 @@ export function FinalCTASection() {
     <section className="bg-black w-full py-28 sm:pt-28 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
       {/* Gradient CTA Card */}
       <div className="max-w-[1100px] mx-auto relative">
-        <div className="relative rounded-[48px] overflow-hidden">
-          {/* Purple gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6B5FFF] via-[#5848CC] to-[#1D2CF3]" />
+        <FadeInUp>
+          <div className="relative rounded-[48px] overflow-hidden">
+            {/* Purple gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6B5FFF] via-[#5848CC] to-[#1D2CF3]" />
 
-          {/* Ambient glow effects */}
-          <div className="absolute inset-0 opacity-40 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-3xl" />
-          </div>
+            {/* Ambient glow effects */}
+            <div className="absolute inset-0 opacity-40 pointer-events-none">
+              <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-3xl" />
+            </div>
 
-          {/* Content */}
-          <div className="relative z-10 text-center px-8 sm:px-16 py-16 sm:py-20">
-            <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,6vw,64px)] text-white leading-[1.1] tracking-tight mb-6">
-              Ready to turn your website into a sales asset this month?
-            </h2>
-            <p className="font-['Poppins',sans-serif] text-[clamp(16px,1.8vw,19px)] text-white/90 leading-[1.6] mb-10 max-w-[650px] mx-auto">
-              Stop losing revenue to bad design. Let's build a site that actually converts.
-            </p>
-            <button
-              onClick={() => {
-                const bookingSection = document.getElementById('booking');
-                if (bookingSection) {
-                  bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="bg-white hover:bg-white/95 text-black rounded-full px-8 py-4 font-['Poppins',sans-serif] font-semibold text-[15px] transition-all hover:scale-105 inline-flex items-center gap-3 group shadow-2xl cursor-pointer"
-            >
-              Get My Revenue-Focused Site Plan
-              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* Content */}
+            <div className="relative z-10 text-center px-8 sm:px-16 py-16 sm:py-20">
+              <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,6vw,64px)] text-white leading-[1.1] tracking-tight mb-6">
+                Ready to turn your website into a sales asset this month?
+              </h2>
+              <p className="font-['Poppins',sans-serif] text-[clamp(16px,1.8vw,19px)] text-white/90 leading-[1.6] mb-10 max-w-[650px] mx-auto">
+                Stop losing revenue to bad design. Let's build a site that actually converts.
+              </p>
+              <button
+                onClick={() => {
+                  const bookingSection = document.getElementById('booking');
+                  if (bookingSection) {
+                    bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="bg-white hover:bg-white/95 text-black rounded-full px-8 py-4 font-['Poppins',sans-serif] font-semibold text-[15px] transition-all hover:scale-105 inline-flex items-center gap-3 group shadow-2xl cursor-pointer"
+              >
+                Get My Revenue-Focused Site Plan
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        </FadeInUp>
       </div>
     </section>
   );
