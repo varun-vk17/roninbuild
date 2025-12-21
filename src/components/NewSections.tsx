@@ -14,12 +14,12 @@ export function TechStackSection() {
 
   return (
     <section
-      className="bg-white/[0.02] sm:bg-black w-full pt-36 pb-16 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
+      className="bg-white/[0.02] sm:bg-black w-full py-28 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
       aria-labelledby="tech-stack-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
         <div className="text-center mb-10">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-0 mb-6 sm:mt-8">
+          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-20 mb-6 sm:mt-8">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
             <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -38,7 +38,7 @@ export function TechStackSection() {
         </div>
 
         {/* Logo Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30 mb-32 sm:mb-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30">
           {technologies.map((tech, index) => (
             <div key={index} className="text-white/80 font-['Poppins',sans-serif] font-semibold text-[clamp(16px,1.8vw,20px)] tracking-wide">
               {tech}
@@ -82,7 +82,7 @@ export function FAQSection() {
 
   return (
     <section
-      className="bg-black w-full pt-36 pb-16 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-28 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="faq-heading"
     >
       {/* Background gradient */}
@@ -102,7 +102,7 @@ export function FAQSection() {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-6 sm:space-y-4 mb-32 sm:mb-0">
+        <div className="space-y-6 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -258,7 +258,7 @@ export function BookingSection() {
   return (
     <section
       id="booking"
-      className="bg-white/[0.015] sm:bg-black w-full pt-36 pb-16 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.015] sm:bg-black w-full py-28 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="booking-heading"
     >
       {/* Background gradient */}
@@ -269,7 +269,7 @@ export function BookingSection() {
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-0 mb-4 sm:mt-8">
+          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
             <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -293,7 +293,7 @@ export function BookingSection() {
         </div>
 
         {/* Booking Card */}
-        <div className="max-w-[1100px] mx-auto mb-32 sm:mb-0">
+        <div className="max-w-[1100px] mx-auto">
           <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 sm:p-12 border border-white/15 shadow-2xl relative overflow-hidden">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
@@ -613,7 +613,7 @@ export function BookingSection() {
 
 export function FinalCTASection() {
   return (
-    <section className="bg-black w-full pt-36 sm:pt-28 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
+    <section className="bg-black w-full py-28 sm:pt-28 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
       {/* Gradient CTA Card */}
       <div className="max-w-[1100px] mx-auto relative">
         <div className="relative rounded-[48px] overflow-hidden">
