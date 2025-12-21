@@ -1,4 +1,7 @@
 import svgPaths from "./imports/svg-j5pvkaq6wj";
+import { BlurFade } from "./components/animations/BlurFade";
+import { ScaleIn } from "./components/animations/ScaleIn";
+import { FadeIn } from "./components/animations/FadeIn";
 import { TechStackSection, FAQSection, BookingSection, FinalCTASection, Footer } from './components/NewSections';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
@@ -54,73 +57,77 @@ function CTAButton({ className = "", variant = "filled" }: { className?: string;
 
 function HeroContent() {
   return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start sm:items-center justify-center relative shrink-0 text-left sm:text-center w-full max-w-[1100px] px-4 sm:px-6 z-10">
+    <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
       {/* Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <div className="bg-[#1e3a8a]/40 backdrop-blur-sm border border-[#3b82f6]/30 rounded-[50px] px-5 py-2 inline-flex items-center gap-2 shadow-lg shadow-[#3b82f6]/10">
-          <PulseDot size="sm" color="blue" />
-          <span className="font-['Poppins',sans-serif] font-medium text-[11px] tracking-[0.15em] uppercase text-[#93c5fd]">
-            Revenue-Focused Website Engineering
-          </span>
-        </div>
-      </motion.div>
+      <BlurFade delay={0.2}>
+        <motion.div>
+          <div className="bg-[#1e3a8a]/40 backdrop-blur-sm border border-[#3b82f6]/30 rounded-[50px] px-5 py-2 inline-flex items-center gap-2 shadow-lg shadow-[#3b82f6]/10">
+            <PulseDot size="sm" color="blue" />
+            <span className="font-['Poppins',sans-serif] font-medium text-[11px] tracking-[0.15em] uppercase text-[#93c5fd]">
+              Revenue-Focused Website Engineering
+            </span>
+          </div>
+        </motion.div>
+      </BlurFade>
 
-      {/* Headline */}
-      <motion.h1
-        id="hero-heading"
-        className="font-['Plus_Jakarta_Sans',sans-serif] font-bold leading-[1.1] text-[clamp(48px,8vw,92px)] text-white tracking-tight relative max-w-[95%] sm:max-w-none"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-      >
-        We build websites that generate revenue.
-      </motion.h1>
+      <BlurFade delay={0.4}>
+        <h1
+          id="hero-heading"
+          className="
+        font-['Plus_Jakarta_Sans',sans-serif]
+        font-bold
+        leading-[1.05]
+        tracking-[-0.02em]
+        text-[clamp(48px,8vw,92px)]
+        text-white
+        relative
+        max-w-[95%]
+        sm:max-w-none
+        mb-8
+      "
+        >
+          We build websites that generate revenue.
+        </h1>
+      </BlurFade>
 
-      {/* Subheadline */}
-      <motion.p
-        className="font-['Poppins',sans-serif] font-normal leading-[1.65] text-[clamp(16px,1.8vw,19px)] text-white/70 max-w-[750px]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-      >
-        Clear, high-performing websites for startups and growing companies. No fluff. No awards. Just a system built to turn your visitors into customers.
-      </motion.p>
+      <BlurFade delay={0.6}>
+        <p
+          className="font-['Poppins',sans-serif] font-normal leading-[1.65] text-[clamp(16px,1.8vw,19px)] text-white/70 max-w-[750px] mb-10 mx-auto"
+        >
+          Clear, high-performing websites for startups and growing companies. No fluff. No awards. Just a system built to turn your visitors into customers.
+        </p>
+      </BlurFade>
 
       {/* CTA with check */}
-      <motion.div
-        className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mt-4 w-full sm:w-auto"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-      >
-        <button
-          onClick={() => {
-            const bookingSection = document.getElementById('booking');
-            if (bookingSection) {
-              bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }}
-          className="bg-white hover:bg-white/95 text-black rounded-[50px] px-8 py-4 font-['Poppins',sans-serif] font-semibold text-[15px] transition-all hover:scale-105 flex items-center gap-2 group shadow-[0_20px_70px_rgba(107,95,255,0.3)] hover:shadow-[0_20px_90px_rgba(107,95,255,0.5)] w-full sm:w-auto justify-center relative overflow-hidden cursor-pointer"
+      <ScaleIn delay={0.8}>
+        <div
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mt-4 w-full sm:w-auto"
         >
-          <span className="relative z-10">Book Free Strategy Call</span>
-          <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+          <button
+            onClick={() => {
+              const bookingSection = document.getElementById('booking');
+              if (bookingSection) {
+                bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="bg-white hover:bg-white/95 text-black rounded-[50px] px-8 py-4 font-['Poppins',sans-serif] font-semibold text-[15px] transition-all hover:scale-105 flex items-center gap-2 group shadow-[0_20px_70px_rgba(107,95,255,0.3)] hover:shadow-[0_20px_90px_rgba(107,95,255,0.5)] w-full sm:w-auto justify-center relative overflow-hidden cursor-pointer"
+          >
+            <span className="relative z-10">Book Free Strategy Call</span>
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
 
-        <div className="flex items-center gap-2">
-          <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-          </svg>
-          <span className="font-['Poppins',sans-serif] text-[14px] text-white/60">
-            Built for results.
-          </span>
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5 text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="font-['Poppins',sans-serif] text-[14px] text-white/60">
+              Built for results.
+            </span>
+          </div>
         </div>
-      </motion.div>
+      </ScaleIn>
     </div>
   );
 }
@@ -137,34 +144,57 @@ function HeroSection() {
 }
 
 function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <nav
-      className="content-stretch flex gap-4 items-center justify-between overflow-visible px-[24px] sm:px-[48px] py-[20px] relative shrink-0 w-full max-w-[1400px] mx-auto z-20"
+      className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300"
       aria-label="Main navigation"
     >
-      <Logo />
-      <div className="flex items-center gap-6 sm:gap-8">
-        <Link
-          to="/our-work"
-          className="font-['Poppins',sans-serif] font-medium text-[18px] sm:text-[18px] text-white/80 hover:text-white transition-colors duration-200"
-        >
-          Our Work
-        </Link>
-        <button
-          onClick={() => {
-            const bookingSection = document.getElementById('booking');
-            if (bookingSection) {
-              bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }}
-          className="bg-white hover:bg-white/95 text-black rounded-[50px] px-5 sm:px-6 py-2 sm:py-2.5 font-['Poppins',sans-serif] font-semibold text-[13px] sm:text-[14px] transition-all hover:scale-105 flex items-center gap-2 group shadow-lg cursor-pointer"
-        >
-          <span className="hidden sm:inline">Book Free Strategy Call</span>
-          <span className="sm:hidden">Book Call</span>
-          <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+      {/* Background layer with blur - positioned behind content */}
+      <div
+        className={`absolute inset-0 transition-all duration-300 ${scrolled
+          ? "bg-black/70 backdrop-blur-md border-b border-white/[0.05]"
+          : "bg-transparent"
+          }`}
+        aria-hidden="true"
+      />
+
+      {/* Content layer - always sharp and clear */}
+      <div className="relative flex items-center justify-between px-[24px] sm:px-[48px] py-[20px] max-w-[1400px] mx-auto w-full">
+        <Logo />
+        <div className="flex items-center gap-6 sm:gap-8">
+          <Link
+            to="/our-work"
+            className="font-['Poppins',sans-serif] font-medium text-[18px] sm:text-[18px] text-white/80 hover:text-white transition-colors duration-200"
+          >
+            Our Work
+          </Link>
+          <button
+            onClick={() => {
+              const bookingSection = document.getElementById('booking');
+              if (bookingSection) {
+                bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="bg-white hover:bg-white/95 text-black rounded-[50px] px-5 sm:px-6 py-2 sm:py-2.5 font-['Poppins',sans-serif] font-semibold text-[13px] sm:text-[14px] transition-all hover:scale-105 flex items-center gap-2 group shadow-lg cursor-pointer"
+          >
+            <span className="hidden sm:inline">Book Free Strategy Call</span>
+            <span className="sm:hidden">Book Call</span>
+            <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
   );
@@ -297,19 +327,21 @@ function RealitySection() {
 
       <div className="max-w-[1400px] mx-auto relative">
         <div className="text-center mb-8 sm:mb-16">
-          <div className="relative inline-block">
-            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+          <BlurFade>
+            <div className="relative inline-block">
+              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
+                {/* Bottom glow effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-                REVENUE-FIRST ENGINEERING
-              </p>
+                <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                  REVENUE-FIRST ENGINEERING
+                </p>
+              </div>
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-[18px] bg-[#6B5FFF]/15 blur-lg opacity-50" aria-hidden="true" />
             </div>
-            {/* Glow effect */}
-            <div className="absolute inset-0 rounded-[18px] bg-[#6B5FFF]/15 blur-lg opacity-50" aria-hidden="true" />
-          </div>
+          </BlurFade>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -318,82 +350,92 @@ function RealitySection() {
           <div className="space-y-6 text-center sm:text-left">
 
 
-            <h2
-              id="reality-heading"
-              className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[clamp(32px,4.5vw,50px)] text-white leading-[1.15] tracking-tight"
-            >
-              We don't design pages. We engineer decisions that lead to revenue.
-            </h2>
+            <BlurFade delay={0.2}>
+              <h2
+                id="reality-heading"
+                className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[clamp(32px,4.5vw,50px)] text-white leading-[1.15] tracking-tight"
+              >
+                We don't design pages. We engineer decisions that lead to revenue.
+              </h2>
+            </BlurFade>
 
             <div className="space-y-6">
-              <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/80 leading-[1.7]">
-                One page. One action. No confusion.
-              </p>
+              <FadeIn delay={0.4}>
+                <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/80 leading-[1.7]">
+                  One page. One action. No confusion.
+                </p>
+              </FadeIn>
 
-              <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/80 leading-[1.7]">
-                If trust isn't established in seconds, revenue dies.
-              </p>
+              <FadeIn delay={0.6}>
+                <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/80 leading-[1.7]">
+                  If trust isn't established in seconds, revenue dies.
+                </p>
+              </FadeIn>
             </div>
 
             {/* Quote card */}
-            <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-md rounded-[27px] p-[29px] border border-white/20 shadow-xl mt-8 sm:mt-12 relative overflow-hidden">
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
+            <ScaleIn delay={0.8} className="w-full">
+              <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-md rounded-[27px] p-[29px] border border-white/20 shadow-xl mt-8 sm:mt-12 relative overflow-hidden">
+                {/* Bottom glow effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
 
-              <p className="font-['Poppins',sans-serif] italic font-medium text-[clamp(14px,1.6vw,18px)] text-white leading-[1.6] relative z-10">
-                "We prioritize the customer's decision. If a pixel doesn't help them buy, it doesn't belong — period."
-              </p>
-            </div>
+                <p className="font-['Poppins',sans-serif] italic font-medium text-[clamp(14px,1.6vw,18px)] text-white leading-[1.6] relative z-10">
+                  "We prioritize the customer's decision. If a pixel doesn't help them buy, it doesn't belong — period."
+                </p>
+              </div>
+            </ScaleIn>
           </div>
 
           {/* Right side - Focus card */}
           <div className="lg:pl-8">
-            <div className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[36px] p-[36px] sm:p-[43px] border border-white/15 shadow-2xl relative overflow-hidden">
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
-
-              {/* Badge */}
-              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-0 sm:mt-8">
+            <ScaleIn delay={0.4}>
+              <div className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[36px] p-[36px] sm:p-[43px] border border-white/15 shadow-2xl relative overflow-hidden">
                 {/* Bottom glow effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-                <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
 
-                <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-                  OUR CORE FOCUS
-                </p>
-              </div>
+                {/* Badge */}
+                <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-0 sm:mt-8">
+                  {/* Bottom glow effect */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-              {/* Main message */}
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(29px,3.6vw,43px)] leading-[1.2] tracking-tight mb-5 relative z-10 max-w-[95%] sm:max-w-none">
-                <span className="text-white">Most websites look good</span>
-                <br />
-                <span className="bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] bg-clip-text text-transparent">
-                  and still lose you money.
-                </span>
-              </h3>
-
-              <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.4vw,16px)] text-white/70 leading-[1.7] mb-6 relative z-10">
-                They confuse visitors, hide the offer, and never ask for the sale.
-              </p>
-
-              <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.5vw,17px)] text-white leading-[1.6] mb-8 relative z-10">
-                We design sites with one goal: Turn visitors into customers.
-              </p>
-
-              {/* Protocol badge */}
-              <div className="flex items-center gap-3 pt-5 border-t border-white/10 relative z-10">
-                <div className="w-9 h-9 rounded-[11px] bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                  <svg className="w-[18px] h-[18px] text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
+                  <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                    OUR CORE FOCUS
+                  </p>
                 </div>
-                <p className="font-['Poppins',sans-serif] font-semibold text-[10px] tracking-[0.12em] uppercase text-[#6B5FFF]">
-                  REVENUE-FIRST PROTOCOL
+
+                {/* Main message */}
+                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(29px,3.6vw,43px)] leading-[1.2] tracking-tight mb-5 relative z-10 max-w-[95%] sm:max-w-none">
+                  <span className="text-white">Most websites look good</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] bg-clip-text text-transparent">
+                    and still lose you money.
+                  </span>
+                </h3>
+
+                <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.4vw,16px)] text-white/70 leading-[1.7] mb-6 relative z-10">
+                  They confuse visitors, hide the offer, and never ask for the sale.
                 </p>
+
+                <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.5vw,17px)] text-white leading-[1.6] mb-8 relative z-10">
+                  We design sites with one goal: Turn visitors into customers.
+                </p>
+
+                {/* Protocol badge */}
+                <div className="flex items-center gap-3 pt-5 border-t border-white/10 relative z-10">
+                  <div className="w-9 h-9 rounded-[11px] bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <svg className="w-[18px] h-[18px] text-[#6B5FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <p className="font-['Poppins',sans-serif] font-semibold text-[10px] tracking-[0.12em] uppercase text-[#6B5FFF]">
+                    REVENUE-FIRST PROTOCOL
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScaleIn>
           </div>
 
         </div>
@@ -454,62 +496,69 @@ function RoadmapSection() {
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header - Left Aligned */}
         <div className="mb-8 sm:mb-16 text-center sm:text-left">
-          <div className="relative inline-block mb-6">
-            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+          <BlurFade>
+            <div className="relative inline-block mb-6">
+              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
+                {/* Bottom glow effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-                WHY DIFFERENT
-              </p>
+                <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                  WHY DIFFERENT
+                </p>
+              </div>
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-[18px] bg-[#6B5FFF]/15 blur-lg opacity-50" aria-hidden="true" />
             </div>
-            {/* Glow effect */}
-            <div className="absolute inset-0 rounded-[18px] bg-[#6B5FFF]/15 blur-lg opacity-50" aria-hidden="true" />
-          </div>
+          </BlurFade>
 
-          <h2
-            id="roadmap-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            A systematic 10-day process.
-          </h2>
+          <BlurFade delay={0.2}>
+            <h2
+              id="roadmap-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              A systematic 10-day process.
+            </h2>
+          </BlurFade>
 
-          <p className="font-['Poppins',sans-serif] font-normal text-[clamp(15px,1.6vw,17px)] text-white/60 leading-[1.6] max-w-[700px] mx-auto sm:mx-0">
-            We follow a high-velocity engineering protocol to get you live and making sales fast.
-          </p>
+          <BlurFade delay={0.3}>
+            <p className="font-['Poppins',sans-serif] font-normal text-[clamp(15px,1.6vw,17px)] text-white/60 leading-[1.6] max-w-[700px] mx-auto sm:mx-0">
+              We follow a high-velocity engineering protocol to get you live and making sales fast.
+            </p>
+          </BlurFade>
         </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[24px] p-10 border border-white/10 hover:border-[#6B5FFF]/40 transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden cursor-pointer"
-            >
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl group-hover:from-[#6B5FFF]/30 transition-colors duration-300" aria-hidden="true" />
+            <ScaleIn key={index} delay={0.1 * index}>
+              <div
+                className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[24px] p-10 border border-white/10 hover:border-[#6B5FFF]/40 transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden cursor-pointer h-full"
+              >
+                {/* Bottom glow effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl group-hover:from-[#6B5FFF]/30 transition-colors duration-300" aria-hidden="true" />
 
-              {/* Icon and Day Badge */}
-              <div className="flex items-start justify-between mb-10 relative z-10">
-                <div className="w-[56px] h-[56px] rounded-[16px] bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] flex items-center justify-center text-white shadow-lg shadow-[#6B5FFF]/30 group-hover:shadow-[#6B5FFF]/60 transition-all duration-300 group-hover:scale-110">
-                  {step.icon}
+                {/* Icon and Day Badge */}
+                <div className="flex items-start justify-between mb-10 relative z-10">
+                  <div className="w-[56px] h-[56px] rounded-[16px] bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] flex items-center justify-center text-white shadow-lg shadow-[#6B5FFF]/30 group-hover:shadow-[#6B5FFF]/60 transition-all duration-300 group-hover:scale-110">
+                    {step.icon}
+                  </div>
+                  <p className="font-['Poppins',sans-serif] font-medium text-[11px] tracking-[0.05em] uppercase text-[#6B5FFF] group-hover:text-[#8B7FFF] transition-colors">
+                    {step.day}
+                  </p>
                 </div>
-                <p className="font-['Poppins',sans-serif] font-medium text-[11px] tracking-[0.05em] uppercase text-[#6B5FFF] group-hover:text-[#8B7FFF] transition-colors">
-                  {step.day}
+
+                {/* Content */}
+                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[20px] text-white leading-[1.3] mb-4 tracking-tight relative z-10 group-hover:text-[#E0DDFF] transition-colors">
+                  {step.title}
+                </h3>
+
+                <p className="font-['Poppins',sans-serif] font-normal text-[15px] text-white/60 leading-[1.6] relative z-10 group-hover:text-white/70 transition-colors">
+                  {step.description}
                 </p>
               </div>
-
-              {/* Content */}
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[20px] text-white leading-[1.3] mb-4 tracking-tight relative z-10 group-hover:text-[#E0DDFF] transition-colors">
-                {step.title}
-              </h3>
-
-              <p className="font-['Poppins',sans-serif] font-normal text-[15px] text-white/60 leading-[1.6] relative z-10 group-hover:text-white/70 transition-colors">
-                {step.description}
-              </p>
-            </div>
+            </ScaleIn>
           ))}
         </div>
       </div>
@@ -583,49 +632,56 @@ function OutcomesSection() {
       <div className="max-w-[1300px] mx-auto relative">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-20">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-6 sm:mt-8">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+          <BlurFade>
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-6 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-            <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-              EXPECTED RESULTS
+              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                EXPECTED RESULTS
+              </p>
+            </div>
+          </BlurFade>
+
+          <BlurFade delay={0.2}>
+            <h2
+              id="outcomes-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              What your business gains.
+            </h2>
+          </BlurFade>
+
+          <FadeIn delay={0.4}>
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
+              We focus on the metrics that actually matter to your bottom line.
             </p>
-          </div>
-
-          <h2
-            id="outcomes-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            What your business gains.
-          </h2>
-
-          <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
-            We focus on the metrics that actually matter to your bottom line.
-          </p>
+          </FadeIn>
         </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6">
           {outcomes.map((outcome, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[30px] p-8 border border-white/10 hover:border-[#6B5FFF]/40 shadow-xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden cursor-pointer"
-            >
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl group-hover:from-[#6B5FFF]/30 transition-colors duration-300" aria-hidden="true" />
+            <ScaleIn key={index} delay={0.1 * index}>
+              <div
+                className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[30px] p-8 border border-white/10 hover:border-[#6B5FFF]/40 shadow-xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden cursor-pointer h-full"
+              >
+                {/* Bottom glow effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl group-hover:from-[#6B5FFF]/30 transition-colors duration-300" aria-hidden="true" />
 
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-[18px] bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] flex items-center justify-center shadow-lg shadow-[#6B5FFF]/30 group-hover:shadow-[#6B5FFF]/60 text-white mb-6 transition-all duration-300 group-hover:scale-110 relative z-10">
-                {outcome.icon}
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-[18px] bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] flex items-center justify-center shadow-lg shadow-[#6B5FFF]/30 group-hover:shadow-[#6B5FFF]/60 text-white mb-6 transition-all duration-300 group-hover:scale-110 relative z-10">
+                  {outcome.icon}
+                </div>
+
+                {/* Content */}
+                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(18px,2vw,20px)] text-white leading-[1.3] tracking-tight relative z-10 group-hover:text-[#E0DDFF] transition-colors">
+                  {outcome.title}
+                </h3>
               </div>
-
-              {/* Content */}
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(18px,2vw,20px)] text-white leading-[1.3] tracking-tight relative z-10 group-hover:text-[#E0DDFF] transition-colors">
-                {outcome.title}
-              </h3>
-            </div>
+            </ScaleIn>
           ))}
         </div>
       </div>
@@ -703,94 +759,103 @@ function PricingSection() {
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-20">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+          <BlurFade>
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-            <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-              FOCUSED EXECUTION
+              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                FOCUSED EXECUTION
+              </p>
+            </div>
+          </BlurFade>
+
+          <BlurFade delay={0.2}>
+            <h2
+              id="pricing-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              Clear paths to growth.
+            </h2>
+          </BlurFade>
+
+          <FadeIn delay={0.4}>
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[800px] mx-auto mb-4">
+              We only take on 2 new projects per month to stay focused on your results. Every project is founder-led.
             </p>
-          </div>
+          </FadeIn>
 
-          <h2
-            id="pricing-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            Clear paths to growth.
-          </h2>
-
-          <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[800px] mx-auto mb-4">
-            We only take on 2 new projects per month to stay focused on your results. Every project is founder-led.
-          </p>
-
-          <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.6vw,17px)] text-white/90 leading-[1.6] max-w-[700px] mx-auto">
-            Most clients make back their investment within their first few conversions.
-          </p>
+          <FadeIn delay={0.6}>
+            <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.6vw,17px)] text-white/90 leading-[1.6] max-w-[700px] mx-auto">
+              Most clients make back their investment within their first few conversions.
+            </p>
+          </FadeIn>
         </div>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-6 mb-10 sm:mb-16">
           {packages.map((pkg, index) => (
-            <div
-              key={index}
-              className={`relative bg-gradient-to-br backdrop-blur-lg rounded-[40px] p-8 sm:p-10 shadow-xl transition-all duration-300 hover:scale-[1.02] group overflow-visible ${pkg.featured
-                ? 'from-white/12 to-white/[0.04] border-2 border-[#6B5FFF]/50 hover:border-[#6B5FFF]/70'
-                : 'from-white/8 to-white/[0.02] border border-white/10 hover:border-white/20'
-                }`}
-            >
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
-
-              {/* Badge for featured */}
-              {pkg.badge && (
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] rounded-[20px] px-4 py-1.5 shadow-lg shadow-[#6B5FFF]/40">
-                    <p className="font-['Poppins',sans-serif] font-semibold text-[10px] tracking-[0.12em] uppercase text-white">
-                      {pkg.badge}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-[16px] bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] flex items-center justify-center shadow-lg shadow-[#6B5FFF]/30 text-white mb-6 group-hover:shadow-[#6B5FFF]/50 transition-shadow relative z-10">
-                {pkg.icon}
-              </div>
-
-              {/* Price */}
-              <div className="mb-4 relative z-10">
-                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,5vw,56px)] text-white leading-[1.1] tracking-tight">
-                  {pkg.price}
-                </h3>
-              </div>
-
-              {/* Title */}
-              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-12 sm:mt-8">
+            <ScaleIn key={index} delay={0.2 * index}>
+              <div
+                className={`relative bg-gradient-to-br backdrop-blur-lg rounded-[40px] p-8 sm:p-10 shadow-xl transition-all duration-300 hover:scale-[1.02] group overflow-visible h-full ${pkg.featured
+                  ? 'from-white/12 to-white/[0.04] border-2 border-[#6B5FFF]/50 hover:border-[#6B5FFF]/70'
+                  : 'from-white/8 to-white/[0.02] border border-white/10 hover:border-white/20'
+                  }`}
+              >
                 {/* Bottom glow effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-                <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
 
-                <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-                  {pkg.title}
-                </p>
+                {/* Badge for featured */}
+                {pkg.badge && (
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-20">
+                    <div className="bg-gradient-to-r from-[#6B5FFF] to-[#1D2CF3] rounded-[20px] px-4 py-1.5 shadow-lg shadow-[#6B5FFF]/40">
+                      <p className="font-['Poppins',sans-serif] font-semibold text-[10px] tracking-[0.12em] uppercase text-white">
+                        {pkg.badge}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-[16px] bg-gradient-to-br from-[#6B5FFF] to-[#1D2CF3] flex items-center justify-center shadow-lg shadow-[#6B5FFF]/30 text-white mb-6 group-hover:shadow-[#6B5FFF]/50 transition-shadow relative z-10">
+                  {pkg.icon}
+                </div>
+
+                {/* Price */}
+                <div className="mb-4 relative z-10">
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,5vw,56px)] text-white leading-[1.1] tracking-tight">
+                    {pkg.price}
+                  </h3>
+                </div>
+
+                {/* Title */}
+                <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-12 sm:mt-8">
+                  {/* Bottom glow effect */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+
+                  <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                    {pkg.title}
+                  </p>
+                </div>
+
+                {/* Features */}
+                <ul className="space-y-4 relative z-10">
+                  {pkg.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-[#6B5FFF] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="font-['Poppins',sans-serif] font-medium text-[15px] text-white/80 leading-relaxed">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              {/* Features */}
-              <ul className="space-y-4 relative z-10">
-                {pkg.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#6B5FFF] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="font-['Poppins',sans-serif] font-medium text-[15px] text-white/80 leading-[1.5]">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </ScaleIn>
           ))}
         </div>
 
@@ -883,7 +948,7 @@ export default function App() {
 
       <SkipLink />
 
-      <div className="bg-black content-stretch flex flex-col items-center relative min-h-screen w-full overflow-hidden antialiased">
+      <div className="bg-black content-stretch flex flex-col items-center relative min-h-screen w-full overflow-x-hidden antialiased">
         <GradientBackground />
         <FloatingParticles />
         <AnimatedGradientOrbs />

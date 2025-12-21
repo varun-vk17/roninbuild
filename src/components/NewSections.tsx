@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { BlurFade } from "./animations/BlurFade";
+import { ScaleIn } from "./animations/ScaleIn";
+import { FadeIn } from "./animations/FadeIn";
 
 export function TechStackSection() {
   const technologies = [
@@ -19,30 +22,36 @@ export function TechStackSection() {
     >
       <div className="max-w-[1400px] mx-auto relative">
         <div className="text-center mb-10">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-20 mb-6 sm:mt-8">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+          <BlurFade>
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-20 mb-6 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
 
-            <p
-              id="tech-stack-heading"
-              className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10"
-            >
-              Built on Reliable Infrastructure
+              <p
+                id="tech-stack-heading"
+                className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10"
+              >
+                Built on Reliable Infrastructure
+              </p>
+            </div>
+          </BlurFade>
+
+          <FadeIn delay={0.2}>
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.6] max-w-[600px] mx-auto mb-8">
+              We use the same tools that power the world's leading startups.
             </p>
-          </div>
-
-          <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.6] max-w-[600px] mx-auto mb-8">
-            We use the same tools that power the world's leading startups.
-          </p>
+          </FadeIn>
         </div>
 
         {/* Logo Grid */}
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30">
           {technologies.map((tech, index) => (
-            <div key={index} className="text-white/80 font-['Poppins',sans-serif] font-semibold text-[clamp(16px,1.8vw,20px)] tracking-wide">
-              {tech}
-            </div>
+            <ScaleIn key={index} delay={0.05 * index}>
+              <div className="text-white/80 font-['Poppins',sans-serif] font-semibold text-[clamp(16px,1.8vw,20px)] tracking-wide">
+                {tech}
+              </div>
+            </ScaleIn>
           ))}
         </div>
       </div>
@@ -93,49 +102,52 @@ export function FAQSection() {
       <div className="max-w-[900px] mx-auto relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2
-            id="faq-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,56px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            Strategic Questions
-          </h2>
+          <BlurFade>
+            <h2
+              id="faq-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,56px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              Strategic Questions
+            </h2>
+          </BlurFade>
         </div>
 
         {/* FAQ Items */}
         <div className="space-y-6 sm:space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[24px] border border-white/10 overflow-hidden transition-all duration-300 hover:border-white/20"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-colors"
-                aria-expanded={openIndex === index}
-              >
-                <h3 className={`font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(16px,1.8vw,18px)] leading-[1.4] tracking-tight pr-6 transition-colors ${openIndex === index ? 'text-[#6B5FFF]' : 'text-white'
-                  }`}>
-                  {faq.question}
-                </h3>
-                <div className={`shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
-                  }`}>
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </div>
-              </button>
-
+            <ScaleIn key={index} delay={0.1 * index}>
               <div
-                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
+                className="bg-gradient-to-br from-white/8 to-white/[0.02] backdrop-blur-lg rounded-[24px] border border-white/10 overflow-hidden transition-all duration-300 hover:border-white/20"
               >
-                <div className="px-6 sm:px-8 pb-6 sm:pb-8">
-                  <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.7]">
-                    {faq.answer}
-                  </p>
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-colors"
+                  aria-expanded={openIndex === index}
+                >
+                  <h3 className={`font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(16px,1.8vw,18px)] leading-[1.4] tracking-tight pr-6 transition-colors ${openIndex === index ? 'text-[#6B5FFF]' : 'text-white'
+                    }`}>
+                    {faq.question}
+                  </h3>
+                  <div className={`shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
+                    }`}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                  <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p className="font-['Poppins',sans-serif] font-medium text-[clamp(14px,1.6vw,16px)] text-white/70 leading-[1.7]">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScaleIn>
           ))}
         </div>
       </div>
@@ -269,31 +281,35 @@ export function BookingSection() {
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
-            {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+          <BlurFade>
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
+              {/* Bottom glow effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+              <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
+                START NOW
+              </p>
+            </div>
+          </BlurFade>
 
-            <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-              START NOW
+          <BlurFade delay={0.2}>
+            <h2
+              id="booking-heading"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
+            >
+              Book Your Strategy Call.
+            </h2>
+          </BlurFade>
+
+          <FadeIn delay={0.4}>
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
+              No sales pressure. Just a clear conversation about your revenue goals.
             </p>
-          </div>
-
-
-          <h2
-            id="booking-heading"
-            className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
-          >
-            Book Your Strategy Call.
-          </h2>
-
-          <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
-            No sales pressure. Just a clear conversation about your revenue goals.
-          </p>
+          </FadeIn>
         </div>
 
         {/* Booking Card */}
-        <div className="max-w-[1100px] mx-auto">
+        <ScaleIn delay={0.6} className="max-w-[1100px] mx-auto">
           <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 sm:p-12 border border-white/15 shadow-2xl relative overflow-hidden">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
@@ -604,7 +620,7 @@ export function BookingSection() {
 
             </div>
           </div>
-        </div>
+        </ScaleIn>
       </div>
     </section>
   );
@@ -616,40 +632,42 @@ export function FinalCTASection() {
     <section className="bg-black w-full py-28 sm:pt-28 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
       {/* Gradient CTA Card */}
       <div className="max-w-[1100px] mx-auto relative">
-        <div className="relative rounded-[48px] overflow-hidden">
-          {/* Purple gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6B5FFF] via-[#5848CC] to-[#1D2CF3]" />
+        <ScaleIn>
+          <div className="relative rounded-[48px] overflow-hidden">
+            {/* Purple gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6B5FFF] via-[#5848CC] to-[#1D2CF3]" />
 
-          {/* Ambient glow effects */}
-          <div className="absolute inset-0 opacity-40 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-3xl" />
-          </div>
+            {/* Ambient glow effects */}
+            <div className="absolute inset-0 opacity-40 pointer-events-none">
+              <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-3xl" />
+            </div>
 
-          {/* Content */}
-          <div className="relative z-10 text-center px-8 sm:px-16 py-16 sm:py-20">
-            <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,6vw,64px)] text-white leading-[1.1] tracking-tight mb-6">
-              Ready to turn your website into a sales asset this month?
-            </h2>
-            <p className="font-['Poppins',sans-serif] text-[clamp(16px,1.8vw,19px)] text-white/90 leading-[1.6] mb-10 max-w-[650px] mx-auto">
-              Stop losing revenue to bad design. Let's build a site that actually converts.
-            </p>
-            <button
-              onClick={() => {
-                const bookingSection = document.getElementById('booking');
-                if (bookingSection) {
-                  bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="bg-white hover:bg-white/95 text-black rounded-full px-8 py-4 font-['Poppins',sans-serif] font-semibold text-[15px] transition-all hover:scale-105 inline-flex items-center gap-3 group shadow-2xl cursor-pointer"
-            >
-              Get My Revenue-Focused Site Plan
-              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* Content */}
+            <div className="relative z-10 text-center px-8 sm:px-16 py-16 sm:py-20">
+              <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,6vw,64px)] text-white leading-[1.1] tracking-tight mb-6">
+                Ready to turn your website into a sales asset this month?
+              </h2>
+              <p className="font-['Poppins',sans-serif] text-[clamp(16px,1.8vw,19px)] text-white/90 leading-[1.6] mb-10 max-w-[650px] mx-auto">
+                Stop losing revenue to bad design. Let's build a site that actually converts.
+              </p>
+              <button
+                onClick={() => {
+                  const bookingSection = document.getElementById('booking');
+                  if (bookingSection) {
+                    bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="bg-white hover:bg-white/95 text-black rounded-full px-8 py-4 font-['Poppins',sans-serif] font-semibold text-[15px] transition-all hover:scale-105 inline-flex items-center gap-3 group shadow-2xl cursor-pointer"
+              >
+                Get My Revenue-Focused Site Plan
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        </ScaleIn>
       </div>
     </section>
   );
