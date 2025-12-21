@@ -299,7 +299,7 @@ function RealitySection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left side - Main content */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center sm:text-left">
             <div className="relative inline-block mb-6">
               <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
                 {/* Bottom glow effect */}
@@ -449,7 +449,7 @@ function RoadmapSection() {
     >
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header - Left Aligned */}
-        <div className="mb-8 sm:mb-16">
+        <div className="mb-8 sm:mb-16 text-center sm:text-left">
           <div className="relative inline-block mb-6">
             <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
               {/* Bottom glow effect */}
