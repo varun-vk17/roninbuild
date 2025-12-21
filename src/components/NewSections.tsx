@@ -14,7 +14,7 @@ export function TechStackSection() {
 
   return (
     <section
-      className="bg-white/[0.02] sm:bg-black w-full py-30 sm:py-26 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
+      className="bg-white/[0.02] sm:bg-black w-full py-36 sm:py-36 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
       aria-labelledby="tech-stack-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
@@ -82,7 +82,7 @@ export function FAQSection() {
 
   return (
     <section
-      className="bg-black w-full py-30 sm:py-26 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-36 sm:py-36 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="faq-heading"
     >
       {/* Background gradient */}
@@ -613,7 +613,7 @@ export function BookingSection() {
 
 export function FinalCTASection() {
   return (
-    <section className="bg-black w-full py-30 sm:pt-26 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
+    <section className="bg-black w-full py-36 sm:pt-36 px-4 sm:px-6 relative overflow-hidden mt-8 sm:mt-0 border-t border-white/[0.03] sm:border-t-0">
       {/* Gradient CTA Card */}
       <div className="max-w-[1100px] mx-auto relative">
         <div className="relative rounded-[48px] overflow-hidden">

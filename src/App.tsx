@@ -239,7 +239,7 @@ function SkipLink() {
 function ProblemSection() {
   return (
     <section
-      className="bg-white/[0.015] sm:bg-black w-full py-30 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.015] sm:bg-black w-full py-36 sm:py-36 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="problem-heading"
     >
       {/* Background gradient */}
@@ -287,7 +287,7 @@ function ProblemSection() {
 function RealitySection() {
   return (
     <section
-      className="bg-black w-full py-30 sm:py-26 lg:py-35 px-6 sm:px-8 lg:px-12 relative border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-36 sm:py-36 lg:py-35 px-6 sm:px-8 lg:px-12 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="reality-heading"
     >
       {/* Background gradient */}
@@ -444,7 +444,7 @@ function RoadmapSection() {
 
   return (
     <section
-      className="bg-white/[0.02] sm:bg-black w-full py-30 sm:py-26 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.02] sm:bg-black w-full py-36 sm:py-36 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="roadmap-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
@@ -567,7 +567,7 @@ function OutcomesSection() {
 
   return (
     <section
-      className="bg-black w-full py-30 sm:py-26 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-36 sm:py-36 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="outcomes-heading"
     >
       {/* Background gradients */}
@@ -688,7 +688,7 @@ function PricingSection() {
 
   return (
     <section
-      className="bg-white/[0.015] sm:bg-black w-full py-30 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.015] sm:bg-black w-full py-36 sm:py-36 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="pricing-heading"
     >
       {/* Background gradients */}
