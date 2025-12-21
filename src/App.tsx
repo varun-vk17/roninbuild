@@ -73,12 +73,14 @@ function HeroContent() {
 
       {/* Headline */}
       <div className="relative max-w-[95%] sm:max-w-none">
-        <StaggerText
-          text="We build websites that generate revenue."
-          className="font-['Plus_Jakarta_Sans',sans-serif] font-bold leading-[1.1] text-[clamp(48px,8vw,92px)] text-white tracking-tight text-center sm:text-center"
-          staggerDelay={0.03}
-          delay={0.2}
-        />
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="font-['Plus_Jakarta_Sans',sans-serif] font-bold leading-[1.0] text-[clamp(48px,8vw,92px)] text-white tracking-tight text-center sm:text-center"
+        >
+          We build websites that generate revenue.
+        </motion.h1>
       </div>
 
       {/* Subheadline */}
