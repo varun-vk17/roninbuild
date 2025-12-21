@@ -239,7 +239,7 @@ function SkipLink() {
 function ProblemSection() {
   return (
     <section
-      className="bg-white/[0.015] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.015] sm:bg-black w-full py-32 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="problem-heading"
     >
       {/* Background gradient */}
@@ -249,7 +249,7 @@ function ProblemSection() {
 
       <div className="max-w-[1200px] mx-auto relative">
         {/* Main content card */}
-        <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-[40px] p-12 sm:p-16 border border-white/10 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-[40px] p-8 sm:p-16 border border-white/10 shadow-2xl relative overflow-hidden">
           {/* Bottom glow effect */}
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
           <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
@@ -257,7 +257,7 @@ function ProblemSection() {
           <div className="text-center max-w-[900px] mx-auto relative z-10">
             <h2
               id="problem-heading"
-              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-8 tracking-tight"
+              className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
             >
               Most websites are built to{" "}
               <span className="text-white/60">impress</span> — not to{" "}
@@ -266,7 +266,7 @@ function ProblemSection() {
               </span>
             </h2>
 
-            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(18px,2.2vw,24px)] text-white/80 leading-[1.6] mb-6">
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(18px,2.2vw,24px)] text-white/80 leading-[1.6] mb-4">
               They look polished, but leave users unsure what to do next.
             </p>
 
@@ -287,7 +287,7 @@ function ProblemSection() {
 function RealitySection() {
   return (
     <section
-      className="bg-black w-full py-24 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-32 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="reality-heading"
     >
       {/* Background gradient */}
@@ -296,12 +296,12 @@ function RealitySection() {
       </div>
 
       <div className="max-w-[1400px] mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left side - Main content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="relative inline-block mb-6">
-              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-12 sm:mt-8">
+              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-0 mb-4 sm:mt-8">
                 {/* Bottom glow effect */}
                 <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
                 <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -332,7 +332,7 @@ function RealitySection() {
             </div>
 
             {/* Quote card */}
-            <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-md rounded-[27px] p-[29px] border border-white/20 shadow-xl mt-12 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-md rounded-[27px] p-[29px] border border-white/20 shadow-xl mt-8 sm:mt-12 relative overflow-hidden">
               {/* Bottom glow effect */}
               <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
@@ -351,7 +351,7 @@ function RealitySection() {
               <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-[#6B5FFF]/20 via-[#6B5FFF]/5 to-transparent blur-xl" aria-hidden="true" />
 
               {/* Badge */}
-              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-12 sm:mt-8">
+              <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-6 relative mt-0 sm:mt-8">
                 {/* Bottom glow effect */}
                 <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
                 <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -444,14 +444,14 @@ function RoadmapSection() {
 
   return (
     <section
-      className="bg-white/[0.02] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.02] sm:bg-black w-full py-32 sm:py-28 lg:py-35 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="roadmap-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header - Left Aligned */}
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-8 sm:mb-16">
           <div className="relative inline-block mb-6">
-            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-12 sm:mt-8">
+            <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-0 mb-4 sm:mt-8">
               {/* Bottom glow effect */}
               <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -477,7 +477,7 @@ function RoadmapSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -567,7 +567,7 @@ function OutcomesSection() {
 
   return (
     <section
-      className="bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-32 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="outcomes-heading"
     >
       {/* Background gradients */}
@@ -578,8 +578,8 @@ function OutcomesSection() {
 
       <div className="max-w-[1300px] mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-12 sm:mt-8">
+        <div className="text-center mb-10 sm:mb-20">
+          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-0 mb-6 sm:mt-8">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
             <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -602,7 +602,7 @@ function OutcomesSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6">
           {outcomes.map((outcome, index) => (
             <div
               key={index}
@@ -688,7 +688,7 @@ function PricingSection() {
 
   return (
     <section
-      className="bg-white/[0.015] sm:bg-black w-full py-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.015] sm:bg-black w-full pt-48 pb-24 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="pricing-heading"
     >
       {/* Background gradients */}
@@ -698,8 +698,8 @@ function PricingSection() {
 
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-12 sm:mt-8">
+        <div className="text-center mb-10 sm:mb-20">
+          <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-0 mb-4 sm:mt-8">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
             <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
@@ -726,7 +726,7 @@ function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-6 mb-10 sm:mb-16">
           {packages.map((pkg, index) => (
             <div
               key={index}
