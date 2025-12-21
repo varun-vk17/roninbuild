@@ -475,7 +475,7 @@ function RoadmapSection() {
             A systematic 10-day process.
           </h2>
 
-          <p className="font-['Poppins',sans-serif] font-normal text-[clamp(15px,1.6vw,17px)] text-white/60 leading-[1.6] max-w-[700px]">
+          <p className="font-['Poppins',sans-serif] font-normal text-[clamp(15px,1.6vw,17px)] text-white/60 leading-[1.6] max-w-[700px] mx-auto sm:mx-0">
             We follow a high-velocity engineering protocol to get you live and making sales fast.
           </p>
         </div>
