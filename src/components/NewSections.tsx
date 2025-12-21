@@ -14,7 +14,7 @@ export function TechStackSection() {
 
   return (
     <section
-      className="bg-white/[0.02] sm:bg-black w-full py-28 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
+      className="bg-white/[0.02] sm:bg-black w-full py-30 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-white/5"
       aria-labelledby="tech-stack-heading"
     >
       <div className="max-w-[1400px] mx-auto relative">
@@ -82,7 +82,7 @@ export function FAQSection() {
 
   return (
     <section
-      className="bg-black w-full py-28 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
+      className="bg-black w-full py-30 sm:py-28 lg:py-35 px-4 sm:px-6 relative border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="faq-heading"
     >
       {/* Background gradient */}
@@ -258,7 +258,7 @@ export function BookingSection() {
   return (
     <section
       id="booking"
-      className="bg-white/[0.015] sm:bg-black w-full py-28 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
+      className="bg-white/[0.015] sm:bg-black w-full py-30 sm:py-28 lg:py-35 px-4 sm:px-6 relative overflow-hidden border-t border-white/[0.03] sm:border-t-0"
       aria-labelledby="booking-heading"
     >
       {/* Background gradient */}
