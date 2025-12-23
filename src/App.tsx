@@ -686,7 +686,7 @@ function OutcomesSection() {
 function PricingSection() {
   const packages = [
     {
-      price: "$399",
+      price: "$299",
       title: "Logo & Branding",
       description: "For businesses that need a strong brand identity that reflects their vision and justifies premium pricing.",
       features: [
@@ -700,7 +700,7 @@ function PricingSection() {
       featured: false
     },
     {
-      price: "$1199",
+      price: "$999",
       title: "High-Converting Landing Page",
       description: "For businesses launching products, testing offers or validating ideas fast without waiting weeks.",
       features: [
@@ -714,7 +714,7 @@ function PricingSection() {
       featured: false // Image doesn't show a featured one specifically but let's keep logic simple
     },
     {
-      price: "$2999",
+      price: "$1499",
       title: "Websites & E-Commerce",
       description: "For businesses that need a website or online store that actually converts browsers into buyers.",
       features: [
@@ -804,7 +804,7 @@ function PricingSection() {
                 {/* Price Section */}
                 <div className="mb-8 relative z-10 flex items-baseline gap-2">
                   <span className="font-['Poppins',sans-serif] text-[16px] text-white/80">Starts at :</span>
-                  <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(24px,3vw,32px)] text-[#22c55e]">
+                  <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(24px,3vw,32px)] text-[#4ade80]">
                     {pkg.price}
                   </span>
                 </div>
