@@ -692,14 +692,18 @@ function PricingSection() {
         </svg>
       ),
       price: "$500",
-      title: "Validating a New Offer Fast",
+      title: "Launch Landing Page",
+      subtitle: "For founders validating an offer or launching fast",
+      description: "One focused page designed to clearly communicate your offer and drive action.",
       features: [
-        "Strategy & discovery session",
-        "Conversion copywriting",
-        "Mobile-optimized design",
-        "Unlimited revisions",
-        "Analytics setup",
-        "48-hour response time"
+        "Strategy & positioning session",
+        "1 high-conversion landing page",
+        "Conversion-focused copy (headline → CTA)",
+        "Mobile-first, fast-loading design",
+        "Development (Next.js or Framer)",
+        "Clear booking / contact flow",
+        "2 revision rounds",
+        "Delivery in 7–10 days"
       ],
       featured: false
     },
@@ -710,33 +714,22 @@ function PricingSection() {
         </svg>
       ),
       price: "$800",
-      title: "Scaling Existing Sales and Leads",
+      title: "Growth Website",
+      subtitle: "For founders ready to turn traffic into consistent leads",
+      description: "A structured, conversion-driven website built to support growth.",
       badge: "3 SPOTS LEFT THIS MONTH",
       features: [
-        "Strategy & discovery session",
-        "Up to 5-10 pages",
-        "Conversion copywriting",
-        "Development (Framer, Next.js, Shopify)",
-        "Mobile-optimized & fast loading",
-        "48-hour response time"
+        "Strategy & positioning session",
+        "Up to 5 pages (Home + key pages)",
+        "Clear page hierarchy & user flow",
+        "Conversion-focused copy across pages",
+        "Mobile-optimized, performance-first build",
+        "Development (Next.js or Framer)",
+        "Booking / contact flow integration",
+        "3 revision rounds",
+        "Delivery in 10–14 days"
       ],
       featured: true
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-      ),
-      price: "Custom",
-      title: "Ready to 10x Your Digital Revenue",
-      features: [
-        "Full funnel engineering",
-        "Strategic consulting",
-        "Priority support",
-        "Market-leading scale"
-      ],
-      featured: false
     }
   ];
 
@@ -770,25 +763,19 @@ function PricingSection() {
               id="pricing-heading"
               className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(36px,5.5vw,64px)] text-white leading-[1.15] mb-6 tracking-tight"
             >
-              Clear paths to growth.
+              Simple pricing. Clear outcomes. No fluff.
             </h2>
           </BlurFade>
 
           <FadeIn delay={0.4}>
             <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[800px] mx-auto mb-4">
-              We only take on 2 new projects per month to stay focused on your results. Every project is founder-led.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.6}>
-            <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.6vw,17px)] text-white/90 leading-[1.6] max-w-[700px] mx-auto">
-              Most clients make back their investment within their first few conversions.
+              Choose the level of build you need. Every project is focused on one goal: turning visitors into customers.
             </p>
           </FadeIn>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-6 mb-10 sm:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-6 mb-10 sm:mb-16 max-w-[1000px] mx-auto">
           {packages.map((pkg, index) => (
             <ScaleIn key={index} delay={0.2 * index}>
               <div
@@ -817,21 +804,35 @@ function PricingSection() {
                   {pkg.icon}
                 </div>
 
-                {/* Price */}
+                {/* Title and Subtitle */}
                 <div className="mb-4 relative z-10">
-                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(42px,5vw,56px)] text-white leading-[1.1] tracking-tight">
-                    {pkg.price}
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[28px] text-white leading-[1.2] tracking-tight mb-2">
+                    {pkg.title}
                   </h3>
+                  <p className="font-['Poppins',sans-serif] font-medium text-[14px] text-[#6B5FFF] leading-relaxed">
+                    {pkg.subtitle}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-12 sm:mt-8">
-                  {/* Bottom glow effect */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
-                  <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#6B5FFF]/25 via-[#6B5FFF]/10 to-transparent blur-lg" aria-hidden="true" />
+                {/* Price */}
+                <div className="mb-6 relative z-10">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-white/50 text-[14px] font-['Poppins',sans-serif]">Starts at:</span>
+                    <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(32px,4vw,40px)] text-white leading-[1.1] tracking-tight">
+                      {pkg.price}
+                    </span>
+                  </div>
+                </div>
 
-                  <p className="font-['Poppins',sans-serif] font-semibold text-[11px] tracking-[0.2em] uppercase text-white/60 relative z-10">
-                    {pkg.title}
+                {/* Description */}
+                <p className="font-['Poppins',sans-serif] font-normal text-[15px] text-white/70 leading-relaxed mb-8 relative z-10">
+                  {pkg.description}
+                </p>
+
+                {/* Includes Badge */}
+                <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-4 py-1 border border-white/10 mb-6 relative">
+                  <p className="font-['Poppins',sans-serif] font-semibold text-[10px] tracking-[0.2em] uppercase text-white/40">
+                    Includes
                   </p>
                 </div>
 
@@ -842,7 +843,7 @@ function PricingSection() {
                       <svg className="w-5 h-5 text-[#6B5FFF] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="font-['Poppins',sans-serif] font-medium text-[15px] text-white/80 leading-relaxed">
+                      <span className="font-['Poppins',sans-serif] font-medium text-[14px] text-white/80 leading-relaxed">
                         {feature}
                       </span>
                     </li>
@@ -853,8 +854,14 @@ function PricingSection() {
           ))}
         </div>
 
-        {/* Guarantee Section */}
-        <div className="max-w-[900px] mx-auto">
+        {/* Guarantee Section and Credibility Line */}
+        <div className="max-w-[900px] mx-auto mt-20">
+          <div className="text-center mb-12">
+            <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(14px,1.6vw,16px)] text-white/90 leading-[1.6]">
+              We take on only 2 projects per month to stay focused on quality and execution.
+            </p>
+          </div>
+
           <div className="bg-gradient-to-br from-[#6B5FFF]/15 to-[#1D2CF3]/10 backdrop-blur-lg rounded-[40px] p-10 sm:p-12 border border-[#6B5FFF]/30 shadow-2xl relative overflow-hidden">
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6B5FFF] to-transparent" aria-hidden="true" />
