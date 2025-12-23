@@ -802,16 +802,14 @@ function PricingSection() {
                 </div>
 
                 {/* Price Section */}
-                <div className="mb-8 relative z-10 flex items-baseline gap-2">
+                <div className="mb-8 relative z-20 flex items-baseline gap-2">
                   <span
-                    className="font-['Poppins',sans-serif] text-[16px]"
-                    style={{ color: 'rgba(255, 255, 255, 0.9)' }}
+                    className="font-['Poppins',sans-serif] text-[16px] !text-white/90"
                   >
                     Starts at :
                   </span>
                   <span
-                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(24px,3vw,32px)]"
-                    style={{ color: '#4ade80' }}
+                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(24px,3vw,32px)] !text-[#4ade80]"
                   >
                     {pkg.price}
                   </span>
