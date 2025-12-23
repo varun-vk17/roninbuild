@@ -708,7 +708,9 @@ function PricingSection() {
         "Conversion copywriting",
         "Mobile-optimized design",
         "Unlimited revisions",
+        "Unlimited revisions",
         "Analytics setup",
+        "Complete delivery in 10 days",
         "48-hour response time"
       ],
       featured: false // Image doesn't show a featured one specifically but let's keep logic simple
@@ -810,8 +812,8 @@ function PricingSection() {
                     Starts at :
                   </span>
                   <span
-                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[42px] sm:text-[50px]"
-                    style={{ color: '#6B5FFF', opacity: 1, textShadow: '0 0 20px rgba(107, 95, 255, 0.3)' }}
+                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[60px] sm:text-[70px]"
+                    style={{ color: '#6B5FFF', opacity: 1, textShadow: '0 0 25px rgba(107, 95, 255, 0.4)' }}
                   >
                     {pkg.price}
                   </span>
