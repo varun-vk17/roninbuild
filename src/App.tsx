@@ -57,7 +57,7 @@ function CTAButton({ className = "", variant = "filled" }: { className?: string;
 
 function HeroContent() {
   return (
-    <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+    <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-start text-left sm:items-center sm:text-center">
       {/* Badge */}
       <BlurFade delay={0.2}>
         <motion.div>
@@ -86,7 +86,7 @@ function HeroContent() {
 
       <BlurFade delay={0.6}>
         <p
-          className="font-['Poppins',sans-serif] font-normal leading-[1.65] text-[clamp(16px,1.8vw,19px)] text-white/70 max-w-[750px] mb-10 mx-auto"
+          className="font-['Poppins',sans-serif] font-normal leading-[1.65] text-[clamp(16px,1.8vw,19px)] text-white/70 max-w-[750px] mb-10 sm:mx-auto"
         >
           Clear, high-performing websites for startups and growing companies. No fluff. No awards. Just a system built to turn your visitors into customers.
         </p>
