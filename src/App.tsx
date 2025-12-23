@@ -73,20 +73,14 @@ function HeroContent() {
       <BlurFade delay={0.4}>
         <h1
           id="hero-heading"
-          className="
-        font-['Plus_Jakarta_Sans',sans-serif]
-        font-bold
-        leading-[1.05]
-        tracking-[-0.02em]
-        text-[clamp(48px,8vw,92px)]
-        text-white
-        relative
-        max-w-[95%]
-        sm:max-w-none
-        mb-8
-      "
+          className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[clamp(48px,8vw,92px)] text-white relative max-w-[95%] sm:max-w-none mb-8 mt-12"
+          style={{
+            lineHeight: '0.85',
+            letterSpacing: '-0.05em',
+            display: 'block'
+          }}
         >
-          We build websites that generate revenue.
+          We build websites that <br className="sm:hidden" /> generate revenue.
         </h1>
       </BlurFade>
 
