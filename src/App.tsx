@@ -57,7 +57,7 @@ function CTAButton({ className = "", variant = "filled" }: { className?: string;
 
 function HeroContent() {
   return (
-    <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-start text-left sm:items-center sm:text-center">
+    <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-start text-left">
       {/* Badge */}
       <BlurFade delay={0.2}>
         <motion.div>
@@ -86,7 +86,7 @@ function HeroContent() {
 
       <BlurFade delay={0.6}>
         <p
-          className="font-['Poppins',sans-serif] font-normal leading-[1.65] text-[clamp(16px,1.8vw,19px)] text-white/70 max-w-[750px] mb-10 sm:mx-auto"
+          className="font-['Poppins',sans-serif] font-normal leading-[1.65] text-[clamp(16px,1.8vw,19px)] text-white/70 max-w-[750px] mb-10"
         >
           Clear, high-performing websites for startups and growing companies. No fluff. No awards. Just a system built to turn your visitors into customers.
         </p>
@@ -95,7 +95,7 @@ function HeroContent() {
       {/* CTA with check */}
       <ScaleIn delay={0.8}>
         <div
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mt-4 w-full sm:w-auto"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full sm:w-auto"
         >
           <button
             onClick={() => {
@@ -341,7 +341,7 @@ function RealitySection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left side - Main content */}
-          <div className="space-y-6 text-center sm:text-left">
+          <div className="space-y-6 text-left">
 
 
             <BlurFade delay={0.2}>
@@ -489,7 +489,7 @@ function RoadmapSection() {
     >
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header - Left Aligned */}
-        <div className="mb-8 sm:mb-16 text-center sm:text-left">
+        <div className="mb-8 sm:mb-16 text-left">
           <BlurFade>
             <div className="relative inline-block mb-6">
               <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 relative mt-20 mb-4 sm:mt-8">
@@ -516,7 +516,7 @@ function RoadmapSection() {
           </BlurFade>
 
           <BlurFade delay={0.3}>
-            <p className="font-['Poppins',sans-serif] font-normal text-[clamp(15px,1.6vw,17px)] text-white/60 leading-[1.6] max-w-[700px] mx-auto sm:mx-0">
+            <p className="font-['Poppins',sans-serif] font-normal text-[clamp(15px,1.6vw,17px)] text-white/60 leading-[1.6] max-w-[700px]">
               We follow a high-velocity engineering protocol to get you live and making sales fast.
             </p>
           </BlurFade>
@@ -625,7 +625,7 @@ function OutcomesSection() {
 
       <div className="max-w-[1300px] mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-20">
+        <div className="text-left mb-10 sm:mb-20">
           <BlurFade>
             <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-6 sm:mt-8">
               {/* Bottom glow effect */}
@@ -648,7 +648,7 @@ function OutcomesSection() {
           </BlurFade>
 
           <FadeIn delay={0.4}>
-            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px] mx-auto">
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[700px]">
               We focus on the metrics that actually matter to your bottom line.
             </p>
           </FadeIn>
@@ -743,7 +743,7 @@ function PricingSection() {
 
       <div className="max-w-[1400px] mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-20">
+        <div className="text-left mb-10 sm:mb-20">
           <BlurFade>
             <div className="inline-block bg-white/5 backdrop-blur-sm rounded-[20px] px-6 py-2 border border-white/10 mb-8 relative mt-20 mb-4 sm:mt-8">
               {/* Bottom glow effect */}
@@ -766,13 +766,13 @@ function PricingSection() {
           </BlurFade>
 
           <FadeIn delay={0.4}>
-            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[800px] mx-auto mb-4">
+            <p className="font-['Poppins',sans-serif] font-medium text-[clamp(16px,1.8vw,18px)] text-white/70 leading-[1.7] max-w-[800px] mb-4">
               We only take on 2 new projects per month to stay focused on your results. Every project is founder-led.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.6vw,17px)] text-white/90 leading-[1.6] max-w-[700px] mx-auto">
+            <p className="font-['Poppins',sans-serif] font-semibold text-[clamp(15px,1.6vw,17px)] text-white/90 leading-[1.6] max-w-[700px]">
               Most clients make back their investment within their first few conversions.
             </p>
           </FadeIn>
