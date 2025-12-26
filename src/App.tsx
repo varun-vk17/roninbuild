@@ -806,13 +806,13 @@ function PricingSection() {
                 {/* Price Section */}
                 <div className="mb-8 relative z-50 flex items-baseline gap-2 isolate">
                   <span
-                    className="font-['Poppins',sans-serif] text-[16px]"
+                    className="font-['Poppins',sans-serif] text-[20px]"
                     style={{ color: '#ffffff', opacity: 1, textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}
                   >
                     Starts at :
                   </span>
                   <span
-                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[60px] sm:text-[70px]"
+                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[40px] sm:text-[48px]"
                     style={{ color: '#6B5FFF', opacity: 1, textShadow: '0 0 25px rgba(107, 95, 255, 0.4)' }}
                   >
                     {pkg.price}
