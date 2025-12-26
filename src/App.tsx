@@ -812,7 +812,7 @@ function PricingSection() {
                     Starts at :
                   </span>
                   <span
-                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[40px] sm:text-[48px]"
+                    className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[50px] sm:text-[60px]"
                     style={{ color: '#6B5FFF', opacity: 1, textShadow: '0 0 25px rgba(107, 95, 255, 0.4)' }}
                   >
                     {pkg.price}
