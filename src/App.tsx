@@ -700,7 +700,7 @@ function PricingSection() {
       featured: false
     },
     {
-      price: "$999",
+      price: "$499",
       title: "High-Converting Landing Page",
       description: "For businesses launching products, testing offers or validating ideas fast without waiting weeks.",
       features: [
@@ -716,7 +716,7 @@ function PricingSection() {
       featured: false // Image doesn't show a featured one specifically but let's keep logic simple
     },
     {
-      price: "$1499",
+      price: "$699",
       title: "Websites & E-Commerce",
       description: "For businesses that need a website or online store that actually converts browsers into buyers.",
       features: [
