@@ -686,7 +686,7 @@ function OutcomesSection() {
 function PricingSection() {
   const packages = [
     {
-      price: "$299",
+      price: "$199",
       title: "Logo & Branding",
       description: "For businesses that need a strong brand identity that reflects their vision and justifies premium pricing.",
       features: [
